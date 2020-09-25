@@ -19,6 +19,9 @@ Future<Album> fetchAlbum() async {
   }
 }
 
+
+
+
 class Album {
   final int userId;
   final int id;
@@ -69,7 +72,7 @@ class _MyAppState extends State<MyApp> {
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return ListTile()
+                return Text(snapshot.data.title);
               } else if (snapshot.hasError) {
                 return Text("${snapshot.error}");
               }
